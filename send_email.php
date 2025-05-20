@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Email inviata con successo
-        $to = "info@wedding-elvira-giorgio.it"; // <-- cambia con la tua email
+        $to = "";
         $subject = "Nuova Prenotazione per il matrimonio";
 
         $body = "Nome e Cognome: $name\n";
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $body .= "Note o messaggi extra: $message\n";
         }
 
-        $headers = "From: info@wedding-elvira-giorgio.it";
+        $headers = "From: ";
         
         if (mail($to, $subject, $body, $headers)) {
             // Email inviata, imposta l'accesso e reindirizza
