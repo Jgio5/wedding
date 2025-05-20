@@ -1,0 +1,12 @@
+RewriteEngine on
+
+# Se il file non è una directory
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Per i file .html
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+# Per i file .php
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
